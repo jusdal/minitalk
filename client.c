@@ -6,7 +6,7 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:39 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/08 19:41:36 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/08 19:47:17 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	sendcharbybit(int pid, char c)
 		else
 			kill(pid, SIGUSR2);
 			//printf("SIGUSR2 PID %d\n", pid);
-		usleep(1250);
+		usleep(125);
 		bitcount--;
 	}
 	//convert char bit by bit and send SIGUSR1 or 2
