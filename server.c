@@ -6,14 +6,11 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:18 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/08 21:03:53 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/09 01:07:03 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <signal.h>
-//#include <stdio.h>
-//#include <stdlib.h>
+#include "minitalk.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
