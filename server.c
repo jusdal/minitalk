@@ -6,9 +6,11 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:18 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/08 13:04:11 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/08 13:11:11 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -40,6 +42,8 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(c[i], fd);
 }
 
+
+
 int	main(void)
 {
 	int	pid;
@@ -47,5 +51,6 @@ int	main(void)
 	pid = getpid();
 	ft_putnbr_fd(pid, 1);
 	ft_putchar_fd('\n', 1);
+
 
 }
