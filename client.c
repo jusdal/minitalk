@@ -6,13 +6,14 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:39 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/08 19:47:17 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/08 20:07:49 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -59,11 +60,23 @@ void	sendcharbybit(int pid, char c)
 	while (bitcount >= 0)
 	{
 		if ((c >> bitcount) & 1)
-			kill(pid, SIGUSR1);
+		{
+			if (kill(pid, SIGUSR1) == -1)
+			{
+				ft_putstr_fd("Error: please verify PID number\n", 1);
+				exit(EXIT_SUCCESS);
+			}
 			//printf("SIGUSR1 PID: %d\n", pid);
+		}
 		else
-			kill(pid, SIGUSR2);
+		{
+			if (kill(pid, SIGUSR2) == -1)
+			{
+				ft_putstr_fd("Error: please verify PID number\n", 1);
+				exit(EXIT_SUCCESS);
+			}
 			//printf("SIGUSR2 PID %d\n", pid);
+		}
 		usleep(125);
 		bitcount--;
 	}
