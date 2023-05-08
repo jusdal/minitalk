@@ -6,7 +6,7 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:39 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/09 01:15:29 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/09 01:24:06 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_atoi(const char *str)
 	return (holder * minuscounter);
 }
 
-void	sendcharbybit(int pid, char c)
+void	sendcharbybit(int pid, unsigned char c)
 {
 	int	bitcount;
 
