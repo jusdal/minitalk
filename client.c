@@ -6,7 +6,7 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:39 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/08 20:07:49 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/08 21:12:39 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	sendcharbybit(int pid, char c)
 				ft_putstr_fd("Error: please verify PID number\n", 1);
 				exit(EXIT_SUCCESS);
 			}
-			//printf("SIGUSR1 PID: %d\n", pid);
 		}
 		else
 		{
@@ -75,21 +74,19 @@ void	sendcharbybit(int pid, char c)
 				ft_putstr_fd("Error: please verify PID number\n", 1);
 				exit(EXIT_SUCCESS);
 			}
-			//printf("SIGUSR2 PID %d\n", pid);
 		}
 		usleep(125);
 		bitcount--;
 	}
-	//convert char bit by bit and send SIGUSR1 or 2
 }
 
-int	main(int argc, char* argv[])
+int	main(int argc, char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (argc != 3)
-		ft_putstr_fd("Please follow this format: ./client <ServerPID> <message>\n", 1);
+		ft_putstr_fd("Follow this format: ./client <ServerPID> <message>\n", 1);
 	if (argc == 3)
 	{
 		while (argv[2][i] != '\0')
@@ -98,4 +95,5 @@ int	main(int argc, char* argv[])
 			i++;
 		}
 	}
+	return (0);
 }
