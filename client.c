@@ -6,7 +6,7 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:39 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/09 01:24:06 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/09 01:41:41 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void	sendcharbybit(int pid, unsigned char c)
 				exit(EXIT_SUCCESS);
 			}
 		}
-		usleep(125);
 		bitcount--;
+		usleep(125);
 	}
 }
 
