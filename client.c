@@ -6,7 +6,7 @@
 /*   By: jdaly <jdaly@student.42bangkok.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 01:02:39 by jdaly             #+#    #+#             */
-/*   Updated: 2023/05/09 01:41:41 by jdaly            ###   ########.fr       */
+/*   Updated: 2023/05/09 17:13:47 by jdaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	sendcharbybit(int pid, unsigned char c)
 			if (kill(pid, SIGUSR1) == -1)
 			{
 				ft_putstr_fd("Error: please verify PID number\n", 1);
-				exit(EXIT_SUCCESS);
+				exit(EXIT_FAILURE);
 			}
 		}
 		else
@@ -69,11 +69,11 @@ void	sendcharbybit(int pid, unsigned char c)
 			if (kill(pid, SIGUSR2) == -1)
 			{
 				ft_putstr_fd("Error: please verify PID number\n", 1);
-				exit(EXIT_SUCCESS);
+				exit(EXIT_FAILURE);
 			}
 		}
 		bitcount--;
-		usleep(125);
+		usleep(100);
 	}
 }
 
